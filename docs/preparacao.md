@@ -16,14 +16,14 @@ Verificação em 28/10/2026.
 
 ## Pendente
 
-- Autenticar o GitHub pelo navegador.
-- Criar o repositório e enviar os documentos.
 - Trazer os documentos de referência do ChatGPT para a conversa ou pasta local.
 
 ## Autenticação
 
 Conta proprietária confirmada: `DarioCeaba`. Repositório desejado: `site-escola`, privado. E-mail de autoria informado: `dario.ceaba@gmail.com`. Nome de autoria proposto: `DarioCeaba`.
 
-As instalações foram concluídas pelo usuário após falhas no download automático. A autenticação do GitHub ainda está pendente.
+As instalações foram concluídas pelo usuário após falhas no download automático. Autenticação oficial do GitHub confirmada na conta `DarioCeaba`, usando HTTPS.
+
+Repositório de destino: `https://github.com/DarioCeaba/site-escola`, com visibilidade privada. O envio inicial será verificado após a criação.
 
 O usuário realiza a autenticação oficial no navegador, inclusive verificação em duas etapas se solicitada. Não enviar senhas, tokens ou códigos privados pelo chat. Credenciais de hospedagem e domínio não são necessárias nesta etapa.
