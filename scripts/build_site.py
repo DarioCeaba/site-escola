@@ -52,13 +52,22 @@ def button(label='Agendar uma visita', cls='', href=WA):
 def img(name, alt, cls='', eager=False):
     return f'<img src="assets/{name}.webp" alt="{escape(alt)}" class="{cls}" loading="{"eager" if eager else "lazy"}" decoding="async">'
 
-def social_links():
+def social_links(icons=False):
     links = [('Instagram', 'https://www.instagram.com/escola.ceaba'),
              ('Facebook', 'https://www.facebook.com/ceabagoiania'),
              ('YouTube', 'https://www.youtube.com/@escolaceaba/videos')]
-    return '<div class="social-links" aria-label="Redes sociais da Escola CEABA">' + ''.join(
-        f'<a href="{url}" target="_blank" rel="noopener noreferrer" aria-label="{label} da Escola CEABA (abre em nova aba)">{label} ↗</a>'
-        for label, url in links) + '</div>'
+    shapes = {
+        'Instagram': '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>',
+        'Facebook': '<path d="M14.2 21v-8.2H17l.4-3.2h-3.2v-2c0-.9.3-1.5 1.6-1.5h1.7V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.3H8v3.2h2.8V21z" fill="currentColor" stroke="none"/>',
+        'YouTube': '<rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 6 3-6 3z" fill="currentColor" stroke="none"/>'
+    }
+    items = []
+    for label, url in links:
+        content = f'<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true" focusable="false">{shapes[label]}</svg>' if icons else f'{label} ↗'
+        items.append(f'<a href="{url}" target="_blank" rel="noopener noreferrer" title="{label}" aria-label="{label} da Escola CEABA (abre em nova aba)">{content}</a>')
+    cls = 'social-links icon-links' if icons else 'social-links'
+    return f'<div class="{cls}" role="group" aria-label="Redes sociais da Escola CEABA">'+''.join(items)+'</div>'
+
 
 def shell(title, description, body, page=''):
     nav = lambda key: ' aria-current="page"' if page==key else ''
@@ -73,7 +82,7 @@ def shell(title, description, body, page=''):
 <button class="mobile-toggle" aria-controls="navigation" aria-expanded="false">Menu ☰</button>
 <nav class="nav" id="navigation" aria-label="Navegação principal"><a href="index.html"{nav('home')}>Início</a><details><summary>Ensino</summary><div class="subnav"><a href="educacao-infantil.html"{nav('educacao-infantil')}>Educação Infantil</a><a href="anos-iniciais.html"{nav('anos-iniciais')}>Anos Iniciais · 1º ao 5º</a><a href="anos-finais.html"{nav('anos-finais')}>Anos Finais · 6º ao 9º</a></div></details><a href="blog.html"{nav('blog')}>Blog</a><a href="contato.html"{nav('contato')}>Contato</a>{button('Agendar visita')}</nav></div></header>
 <main id="conteudo">{body}</main>
-<footer class="footer"><div class="wrap"><div class="footer-grid"><div><img src="assets/logo.png" alt="Escola CEABA" width="150" height="101" loading="lazy"><p>Uma escola que sente.<br>E que está perto de você.</p></div><div><h3>Cada etapa, um novo mundo.</h3><a href="educacao-infantil.html">Educação Infantil</a><a href="anos-iniciais.html">Ensino Fundamental · Anos Iniciais</a><a href="anos-finais.html">Ensino Fundamental · Anos Finais</a></div><div><h3>Vamos conversar?</h3><a href="{WA}" target="_blank" rel="noopener noreferrer">WhatsApp · (62) 99832-5890 ↗</a><a href="contato.html">Agende uma visita</a><a href="blog.html">Conteúdos da escola</a>{social_links()}</div></div><div class="footer-bottom"><span>Escola CEABA · Educação Infantil e Ensino Fundamental</span><span>Versão de apresentação · conteúdo em revisão</span></div></div></footer>
+<footer class="footer"><div class="wrap"><div class="footer-grid"><div><img src="assets/logo.png" alt="Escola CEABA" width="150" height="101" loading="lazy"><p>Uma escola que sente.<br>E que está perto de você.</p></div><div><h3>Cada etapa, um novo mundo.</h3><a href="educacao-infantil.html">Educação Infantil</a><a href="anos-iniciais.html">Ensino Fundamental · Anos Iniciais</a><a href="anos-finais.html">Ensino Fundamental · Anos Finais</a></div><div><h3>Vamos conversar?</h3><a href="{WA}" target="_blank" rel="noopener noreferrer">WhatsApp · (62) 99832-5890 ↗</a><a href="contato.html">Agende uma visita</a><a href="blog.html">Conteúdos da escola</a>{social_links(icons=True)}</div></div><div class="footer-bottom"><span>Escola CEABA · Educação Infantil e Ensino Fundamental</span><span>Versão de apresentação · conteúdo em revisão</span></div></div></footer>
 <a class="whatsapp" href="{WA}" target="_blank" rel="noopener noreferrer" aria-label="Conversar com a Escola CEABA pelo WhatsApp (abre em nova aba)">Vamos conversar? ↗</a></body></html>'''
 
 def cta():
