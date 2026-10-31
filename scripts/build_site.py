@@ -42,6 +42,9 @@ ARTICLES = [
       sections=[('Aprender fazendo conexões','Nos Anos Finais, a aprendizagem ativa e interdisciplinar convida os estudantes a relacionar conhecimentos e trabalhar em equipe. Os projetos abrem espaço para pesquisa, autoria e experiências práticas.'),('Investigar e compartilhar','Na Feira de Ciências, experimentos e pesquisas são compartilhados com a comunidade. O Rally Cultural integra saberes em uma dinâmica de desafios coletivos. Na Coletânea Literária, a autoria dos estudantes ganha a forma de um livro.'),('Criatividade e responsabilidade','O Festival Ecológico da Canção aproxima música e consciência ambiental. A Feira do Empreendedorismo transforma os conhecimentos de educação financeira em vivências práticas. São caminhos para desenvolver protagonismo e responsabilidade.')]),
 ]
 
+BLOG_ARTICLES = [json.loads((ROOT / 'content' / 'artigos' / (slug + '.json')).read_text(encoding='utf-8'))
+                 for slug in ['escolher-escola-ideal', 'psicomotricidade', 'musicalizacao-infantil']]
+
 def button(label='Agendar uma visita', cls='', href=WA):
     external = ' target="_blank" rel="noopener noreferrer"' if href.startswith('https:') else ''
     return f'<a class="button {cls}" href="{href}"{external}>{label}{ARROW}</a>'
@@ -77,7 +80,8 @@ def cta():
     return f'<section class="section"><div class="wrap"><div class="wide-cta"><div><span class="eyebrow" style="color:#bce3ed">ESCOLA E FAMÍLIA, MAIS PERTO</span><h2>A próxima descoberta começa com uma visita.</h2><p>Venha conhecer nossa proposta, conversar com a equipe e sentir de perto o que faz parte do dia a dia CEABA.</p></div>{button(cls="yellow")}</div></div></section>'
 
 def stories():
-    return '<div class="story-grid">'+''.join(f'<article class="story"><a href="blog-{a["slug"]}.html">{img(a["image"],a["title"])}<span class="eyebrow">{a["category"]}</span><h3>{a["title"]}</h3><p>{a["summary"]}</p><span class="text-link">Ler conteúdo {ARROW}</span></a></article>' for a in ARTICLES)+'</div>'
+    return '<div class="story-grid">'+''.join(f'<article class="story cover-square"><a href="blog-{a["slug"]}.html">{img(a["image"],a["image_alt"])}<span class="eyebrow">{a["category"]}</span><h3>{escape(a["title"])}</h3><p>{escape(a["summary"])}</p><span class="text-link">Ler artigo {ARROW}</span></a></article>' for a in BLOG_ARTICLES)+'</div>'
+
 
 def home():
     stagecards = ''.join(f'<a class="stage" href="{s["slug"]}.html">{img(s["image"],"Vivência pedagógica da Escola CEABA")}<div class="stage-body"><span class="label">{s["age"]}</span><h3>{s["name"].replace("Ensino Fundamental · ", "")}</h3><p>{s["intro"].split(". ")[0]}.</p><span class="more">Conheça esta etapa {ARROW}</span></div></a>' for s in STAGES)
@@ -93,11 +97,29 @@ def stage_page(s):
     return f'''<section class="page-hero"><div class="wrap"><div class="crumb"><a href="index.html">Início</a> / Ensino / {s['name']}</div><div class="split"><div><span class="eyebrow">{s['name']}</span><span class="age">{s['age']}</span><h1>{s['headline']}</h1><p class="lead">{s['intro']}</p>{button()}</div>{img(s['image'],'Vivência pedagógica da Escola CEABA',eager=True)}</div></div></section><section class="section"><div class="wrap"><div class="section-head"><div><span class="eyebrow">APRENDIZAGEM COM SIGNIFICADO</span><h2>Uma proposta para<br>crescer por inteiro.</h2></div><p>{s['description']}</p></div><div class="projects">{projects}</div></div></section><section class="section soft"><div class="wrap content"><span class="eyebrow">ORGANIZE SUA VISITA</span><h2>Vamos conhecer essa etapa de perto?</h2><p>Converse com a equipe sobre a rotina, as turmas e as experiências que fazem parte do dia a dia.</p><div class="schedule">{hours}</div><p style="font-size:14px">Horários apresentados no material pedagógico. Confirme com a equipe as turmas e a disponibilidade para o próximo período letivo.</p><div class="faq"><details><summary>Como posso conhecer a escola?</summary><p>Agende uma visita pelo WhatsApp. Nossa equipe poderá conversar sobre a proposta pedagógica e combinar um horário para receber sua família.</p></details><details><summary>Como funciona a abordagem sociointeracionista?</summary><p>A aprendizagem é construída por meio das interações, das experiências e da participação ativa dos estudantes. O professor faz a mediação, reconhecendo o repertório e o desenvolvimento de cada aluno.</p></details></div></div></section>{cta()}'''
 
 def blog():
-    return f'<section class="page-hero"><div class="wrap"><span class="eyebrow">UNIVERSO CEABA</span><h1>Ideias que aproximam.<br>Aprendizados que inspiram.</h1><p class="lead">Conheça as experiências e os princípios que dão vida à nossa proposta pedagógica.</p></div></section><section class="section"><div class="wrap">{stories()}<p class="caption" style="margin-top:40px">Conteúdos institucionais baseados nos materiais pedagógicos da escola. Notícias e eventos serão incluídos após a seleção das publicações.</p></div></section>{cta()}'
+    return f'<section class="page-hero"><div class="wrap"><span class="eyebrow">UNIVERSO CEABA</span><h1>Ideias que aproximam.<br>Aprendizados que inspiram.</h1><p class="lead">Conheça as experiências e os princípios que dão vida à nossa proposta pedagógica.</p></div></section><section class="section"><div class="wrap">{stories()}<p class="caption" style="margin-top:40px">Artigos sobre educação, desenvolvimento infantil e a relação entre escola e família.</p></div></section>{cta()}'
 
 def article(a):
     text=''.join(f'<h2>{heading}</h2><p>{paragraph}</p>' for heading,paragraph in a['sections'])
     return f'<section class="page-hero"><div class="wrap content"><div class="article-nav"><a class="text-link" href="blog.html">← Voltar aos conteúdos</a></div><span class="eyebrow">{a["category"]}</span><h1>{a["title"]}</h1><p class="lead">{a["summary"]}</p><span class="article-meta">ESCOLA CEABA · PROPOSTA PEDAGÓGICA</span></div></section><section class="section"><article class="wrap content">{img(a["image"],"Vivência pedagógica da Escola CEABA","article-cover")}{text}<p class="caption">Texto institucional elaborado a partir das apresentações pedagógicas fornecidas pela Escola CEABA.</p></article></section>{cta()}'
+
+def submitted_article(a):
+    parts = []
+    list_type = None
+    for block in a['blocks']:
+        kind, text = block['type'], escape(block['text'])
+        target_list = {'bullet': 'ul', 'number': 'ol'}.get(kind)
+        if list_type != target_list:
+            if list_type: parts.append(f'</{list_type}>')
+            if target_list: parts.append(f'<{target_list}>')
+            list_type = target_list
+        if target_list: parts.append(f'<li>{text}</li>')
+        elif kind == 'heading': parts.append(f'<h2>{text}</h2>')
+        elif text.startswith(('“', '&quot;')): parts.append(f'<blockquote><p>{text}</p></blockquote>')
+        else: parts.append(f'<p>{text}</p>')
+    if list_type: parts.append(f'</{list_type}>')
+    body = ''.join(parts)
+    return f'<section class="page-hero"><div class="wrap content"><div class="article-nav"><a class="text-link" href="blog.html">← Voltar ao blog</a></div><span class="eyebrow">{escape(a["category"])}</span><h1>{escape(a["title"])}</h1><span class="article-meta">BLOG CEABA</span></div></section><section class="section"><article class="wrap content article-body">{img(a["image"],a["image_alt"],"article-cover square-cover",True)}{body}</article></section>{cta()}'
 
 def contact():
     return f'''<section class="page-hero"><div class="wrap"><span class="eyebrow">ESTAMOS PERTO</span><h1>Vamos conversar sobre<br>o próximo passo?</h1><p class="lead">Uma visita é o começo de uma relação. Conheça a escola, tire suas dúvidas e descubra nossa proposta.</p></div></section><section class="section"><div class="wrap contact-grid"><div class="contact-box"><span class="eyebrow">ATENDIMENTO PELO WHATSAPP</span><h2>Sua família é bem-vinda.</h2><p>Fale com nossa equipe para agendar uma visita e saber mais sobre as etapas de ensino.</p><p><strong>(62) 99832-5890</strong></p>{button('Conversar com a equipe')}<p class="caption">O botão abre o WhatsApp com uma mensagem pronta. O envio é confirmado por você no aplicativo.</p></div><div><h2>O que você pode<br>conhecer na visita?</h2><ul><li>A proposta pedagógica de cada etapa.</li><li>Os ambientes e a rotina da escola.</li><li>Os programas e projetos desenvolvidos.</li><li>Informações sobre turmas e horários.</li></ul><h3>Acompanhe o CEABA</h3>{social_links()}<div class="notice">Endereço completo, localização e e-mail serão incluídos após a confirmação dos dados de contato da escola.</div></div></div></section>'''
@@ -111,6 +133,8 @@ for s in STAGES:
 save('blog.html','Universo CEABA', 'Conheça a proposta pedagógica e as experiências de aprendizagem da Escola CEABA.',blog(),'blog')
 for a in ARTICLES:
     save('blog-'+a['slug']+'.html',a['title'],a['summary'],article(a),'blog')
+for a in BLOG_ARTICLES:
+    save('blog-'+a['slug']+'.html',a['title'],a['summary'],submitted_article(a),'blog')
 save('contato.html','Agende uma visita','Converse com a equipe da Escola CEABA pelo WhatsApp e agende uma visita para conhecer a escola.',contact(),'contato')
 (OUT/'robots.txt').write_text('User-agent: *\nDisallow: /\n',encoding='utf-8')
-print('9 páginas HTML geradas em public/. Prévia com indexação bloqueada até a revisão e configuração do domínio.')
+print(f'{len(list(OUT.glob(chr(42)+chr(46)+"html")))} páginas HTML geradas em public/. Prévia com indexação bloqueada.')
