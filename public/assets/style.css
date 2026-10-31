@@ -17,3 +17,20 @@
 .social-links.icon-links{gap:12px;align-items:center}
 .social-links.icon-links a{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;margin:0;border:1px solid #b2cbd5;border-radius:50%;color:var(--navy);text-decoration:none;transition:background .2s,color .2s}
 .social-links.icon-links a:hover{background:var(--navy);color:white;border-color:var(--navy)}
+
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.testimonial{margin:0;padding:30px;background:var(--paper);border:1px solid var(--line);border-radius:24px;display:flex;flex-direction:column}
+.testimonial .quote-mark{font-size:70px;height:52px}
+.testimonial blockquote{margin:0 0 30px;font-size:19px;line-height:1.65;color:var(--ink)}
+.testimonial figcaption{font-size:14px;font-weight:700;color:var(--navy);margin-top:auto}
+.instagram-invite{border-top:1px solid var(--line);padding-top:35px;display:flex;gap:35px;justify-content:space-between;align-items:center}
+.instagram-invite h3{font-size:30px}.instagram-invite p{margin-bottom:0;max-width:650px}.instagram-invite .button{flex-shrink:0}
+.instagram-widget{margin-bottom:30px;overflow:hidden;border-radius:20px;background:white}
+.platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.platform-card{border:1px solid var(--line);padding:32px;border-radius:24px;display:flex;flex-direction:column;background:var(--paper)}
+.platform-card h2{font-size:36px}.platform-card p{font-size:16px;margin-bottom:30px}.platform-card .button{margin-top:auto;align-self:flex-start}
+.portal-help{margin:55px auto 0;max-width:800px;border-top:1px solid var(--line);padding-top:40px}.portal-help h2{font-size:34px}
+.contact-location address{font-style:normal;font-size:21px;line-height:1.7;margin-bottom:25px}.contact-location address span{font-size:16px;color:var(--muted)}
+.contact-location h3{font-size:24px;margin-top:35px}.contact-number{font-size:18px}.contact-separator{border-top:1px solid var(--line);margin:30px 0}.contact-box .contact-separator+h3{font-size:22px}
+@media(max-width:1050px){.mobile-toggle{display:block;padding:10px 16px;background:white;border:1px solid var(--line);border-radius:30px;font-size:14px}.nav{display:none;position:absolute;top:100%;left:0;width:100%;max-height:calc(100dvh - 100px);overflow:auto;background:white;padding:20px;box-shadow:0 20px 30px #123b5015;align-items:stretch;gap:7px;border-bottom:1px solid var(--line)}.nav.open{display:flex;flex-direction:column}.nav>a:not(.button),.nav summary{padding:10px}.subnav{position:static;box-shadow:none;margin-bottom:10px;min-width:0;border:0;background:var(--paper)}}
+@media(max-width:760px){.testimonials,.platforms{grid-template-columns:1fr}.instagram-invite{display:block}.instagram-invite .button{margin-top:25px}.testimonial{padding:25px}.platform-card{padding:28px}.contact-location address{font-size:19px}}

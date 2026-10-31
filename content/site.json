@@ -1,0 +1,21 @@
+{
+  "contact": {
+    "address": "Rua 1134, nº 183 — Setor Marista, Goiânia – GO",
+    "address_detail": "Quadra 241, Lote 25",
+    "phone": "(62) 3281-3342",
+    "phone_uri": "tel:+556232813342",
+    "hours": "Segunda a sexta-feira, das 7h às 18h",
+    "maps_url": "https://maps.app.goo.gl/WpX1V1PkWK7XWChd8"
+  },
+  "testimonials": [
+    {"name": "Mirelle Braga Carneiro", "quote": "Estou adorando essa escola! Minha filha está aprendendo e brincando muito."},
+    {"name": "Lucília Santana", "quote": "Muito atenciosos. (…) minha filha se adaptou e foi muito bem recebida."},
+    {"name": "Rubens Swistalski", "quote": "O CEABA é a extensão da educação que damos em nossa casa para a nossa filhota …"}
+  ],
+  "instagram": {"profile_url": "https://www.instagram.com/escola.ceaba", "widget_url": null},
+  "platforms": [
+    {"name": "Meu Bernoulli", "tag": "APRENDIZAGEM", "description": "Acesso ao ambiente digital do Sistema de Ensino Bernoulli. Nossa equipe pode orientar sobre o endereço de acesso e seu cadastro.", "url": null},
+    {"name": "Plurall", "tag": "PLATAFORMA DIGITAL", "description": "Entre na plataforma Plurall com o cadastro utilizado pela sua família ou pelo estudante.", "url": "https://login.plurall.net/"},
+    {"name": "LIV", "tag": "INTELIGÊNCIA DE VIDA", "description": "Acesse o portal do Laboratório de Inteligência de Vida com as credenciais fornecidas para sua participação no programa.", "url": "https://portal.inteligenciadevida.com.br/auth/login"}
+  ]
+}
