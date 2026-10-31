@@ -17,4 +17,5 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 tmp/
+outputs/
 __pycache__/
