@@ -27,3 +27,7 @@
 ## Decisões técnicas
 
 Primeira versão estática na pasta `public/`; conteúdo editável pelo gerador `scripts/build_site.py`. Painel para blog ainda depende do fluxo de edição desejado. Não será exigido Node.js no servidor HostGator. Pendências antigas desta lista devem ser lidas junto da consolidação atual em `docs/diretrizes-site.md`.
+
+## Atualização de 31/10/2026
+
+WhatsApp principal e redes sociais confirmados. Painel de edição desejável para múltiplos responsáveis. Plano básico HostGator, provável cPanel; conferência do plano e envio de mídias previstos para 03/11/2026. Ver detalhes em `docs/diretrizes-site.md`.

@@ -25,12 +25,22 @@ Imagens da primeira prévia extraídas dos PDFs fornecidos. Não são fotos exte
 
 ## Tecnologia e hospedagem
 
-Primeira versão local em HTML, CSS e JavaScript, sem dependências externas no navegador nem servidor Node em produção. Conteúdo gerado como páginas HTML estáticas; pasta `public/` pronta para futura transferência à HostGator. HTML/JS são compatíveis com hospedagem compartilhada segundo a tabela oficial da HostGator; Node.js no servidor não é suportado nesse tipo de plano. Plano contratado ainda a confirmar.
+Primeira versão local em HTML, CSS e JavaScript, sem dependências externas no navegador nem servidor Node em produção. Conteúdo gerado como páginas HTML estáticas; pasta `public/` pronta para futura transferência à HostGator. HTML/JS são compatíveis com hospedagem compartilhada segundo a tabela oficial da HostGator; Node.js no servidor não é suportado nesse tipo de plano. Usuário informa plano básico e provável cPanel; nome exato e recursos serão conferidos quando tiver acesso em 03/11/2026.
 
-Blog inicial com textos institucionais derivados dos materiais, identificados como proposta pedagógica; sem notícias ou datas fictícias. Painel de edição depende da resposta do usuário. Feed automático do Instagram e tour dependem de links/arquivos e configuração autorizada; não simular integrações.
+Blog inicial com textos institucionais derivados dos materiais, identificados como proposta pedagógica; sem notícias ou datas fictícias. Painel de edição é desejado, pois várias pessoas da escola atualizarão o site. Prever contas individuais, edição de posts e imagens, rascunho, publicação e exclusão. A primeira prévia estática ainda não contém esse painel; a arquitetura definitiva será escolhida após conferir o plano. Feed automático do Instagram e tour dependem de links/arquivos e configuração autorizada; não simular integrações.
 
 ## Pendências para lançamento
 
-Plano HostGator, domínio, endereço completo, e-mail público, links sociais, confirmação dos telefones (PDFs pedagógicos exibem também 62 98408-5029 e 62 3281-3342), logo/fontes/fotos/vídeos originais e usos aprovados, depoimentos, definição de quem mantém o blog e configuração das integrações. Política de privacidade depende dos dados realmente coletados e serviços escolhidos. SEO técnico sem promessa de posição em buscadores ou respostas de IA.
+Plano HostGator, domínio, endereço completo, e-mail público,  logo/fontes/fotos/vídeos originais e usos aprovados, depoimentos, configuração do painel compartilhado e das integrações. Política de privacidade depende dos dados realmente coletados e serviços escolhidos. SEO técnico sem promessa de posição em buscadores ou respostas de IA.
 
 Referência técnica: https://suporte.hostgator.com.br/hc/pt-br/articles/30811116692115-Quais-s%C3%A3o-as-compatibilidades-da-HostGator
+
+## Confirmações do usuário em 31/10/2026
+
+- WhatsApp principal confirmado: (62) 99832-5890. Outros números dos PDFs não serão adotados sem confirmação.
+- Instagram: https://www.instagram.com/escola.ceaba
+- Facebook: https://www.facebook.com/ceabagoiania
+- YouTube: https://www.youtube.com/@escolaceaba/videos
+- Conteúdo atualizado por várias pessoas; painel de edição desejável.
+- Logo, fotos e demais materiais serão enviados na terça-feira, 03/11/2026. Acesso ao cPanel previsto para essa data.
+- Links sociais adicionados como links diretos; isso não configura feed automático nem acesso às contas.
