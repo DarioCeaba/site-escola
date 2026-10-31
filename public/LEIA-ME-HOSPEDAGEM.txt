@@ -1,0 +1,15 @@
+PRÉVIA LOCAL — ESCOLA CEABA
+
+Esta pasta contém o site estático, sem necessidade de Node.js ou Python no servidor.
+Para publicação futura na HostGator: transferir o conteúdo desta pasta para o diretório do domínio (normalmente public_html), após backup do destino e revisão.
+
+ANTES DA PUBLICAÇÃO:
+- Confirmar plano, domínio e diretório de destino.
+- Revisar imagens e substituí-las pelos originais autorizados em maior resolução.
+- Confirmar contatos, endereço, horários e links sociais.
+- Definir atualização do blog e integrações de Instagram/tour.
+- Remover a identificação de versão em revisão no rodapé.
+- Alterar robots.txt e remover noindex/nofollow das páginas apenas após aprovação do conteúdo.
+- Configurar HTTPS, domínio canônico, metadados sociais completos, sitemap e política de privacidade conforme serviços efetivamente usados.
+
+Não enviar pastas .git, scripts, docs, tmp, documentos de referência ou credenciais para a pasta pública da hospedagem.

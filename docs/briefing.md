@@ -4,10 +4,11 @@
 
 - Será um novo website para uma escola.
 - Dario conduz a preparação com auxílio do Codex.
-- A fase atual abrange ambiente, documentação e histórico.
+- A fase atual inclui construção da primeira versão local, autorizada em 31/10/2026.
 - O repositório no GitHub deverá ser privado.
 - Conta proprietária: `DarioCeaba`; nome do repositório: `site-escola`.
-- A implementação depende das diretrizes que o usuário fornecerá.
+- Cinco documentos de diretrizes e conteúdo pedagógico recebidos e lidos. Consolidação em `docs/diretrizes-site.md`.
+- Hospedagem final na HostGator; primeira versão em HTML, CSS e JavaScript estáticos.
 
 ## Pendente
 
@@ -21,8 +22,8 @@
 - Materiais aprovados para publicação e regras para uso de imagens.
 - Requisitos de acessibilidade, privacidade e manutenção.
 - Orçamento, cronograma e responsáveis pela aprovação.
-- Conteúdo das fontes do projeto homônimo no ChatGPT: ainda não disponível nesta pasta.
+- Materiais adicionais das fontes do ChatGPT precisam ser trazidos explicitamente, quando necessários.
 
 ## Decisões técnicas
 
-Pendentes até a definição do escopo.
+Primeira versão estática na pasta `public/`; conteúdo editável pelo gerador `scripts/build_site.py`. Painel para blog ainda depende do fluxo de edição desejado. Não será exigido Node.js no servidor HostGator. Pendências antigas desta lista devem ser lidas junto da consolidação atual em `docs/diretrizes-site.md`.
