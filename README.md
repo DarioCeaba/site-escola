@@ -7,8 +7,9 @@ Primeira versão local do website da Escola CEABA, baseada nos documentos fornec
 - `docs/briefing.md`: informações confirmadas e pendentes.
 - `AGENTS.md`: orientações para trabalhar neste projeto.
 - `docs/preparacao.md`: estado da preparação e próximos passos.
+- `docs/guia-naiane.md`: preparação de outro computador e colaboração nas imagens.
 - `docs/diretrizes-site.md`: requisitos consolidados e pendências de lançamento.
-- `public/`: nove páginas estáticas, estilos, comportamento e imagens da prévia. Somente o conteúdo desta pasta será destinado à hospedagem.
+- `public/`: páginas estáticas, estilos, comportamento e imagens do site. Somente o conteúdo desta pasta será destinado à hospedagem.
 - `scripts/build_site.py`: gerador das páginas; não é necessário na hospedagem.
 
 ## Etapas
